@@ -21,6 +21,7 @@ def create_dataFrame(country_list, full_data_df):
         # Data Clean-Up
 		cell_count = int(CO2_emissions_updated.columns[0])
 		CO2_emissions_updated = CO2_emissions_updated.rename(columns = {cell_count: "CO2 Emissions"})
+		CO2_emissions_updated = CO2_emissions_updated.dropna()
 		CO2_emissions_updated = CO2_emissions_updated.reset_index().iloc[4:]
 		CO2_emissions_updated = CO2_emissions_updated.rename(columns = {"index": "Years"})
 
